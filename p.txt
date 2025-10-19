@@ -1,2 +1,3 @@
 Producto: Tortilla de patata | Precio: 4.50 | Stock: 50
 Producto: Ensaladilla rusa | Precio: 3.95 | Stock: 50
+Producto: Cacad de vaca | Precio: 3 | Stock: 200

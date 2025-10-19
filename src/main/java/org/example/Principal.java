@@ -1,3 +1,11 @@
+/*
+Crea un programa que para trabajar con productos de un supermercado:
+
+Cree un archivo.
+Lea y muestre su contenido.
+Pida al usuario que introduzca un nuevo producto (nombre, precio y cantidad).
+ */
+
 package org.example;
 
 import javax.swing.*;
@@ -13,30 +21,21 @@ import java.nio.file.StandardOpenOption;
 public class Principal {
     public static void main(String[] args) {
 
-        /*
-        List<Producto> listaProductos = new ArrayList<>();
-
-        Producto producto1 = new Producto("Tortilla de patata", new BigDecimal("4.5"), 10);
-        Producto producto2 = new Producto("Jamón serrano", new BigDecimal("3.80"), 10);
-        Producto producto3 = new Producto("Huevos de gallina campera", new BigDecimal("3.50"), 10);
-        Producto producto4 = new Producto("Arroz redondo", new BigDecimal("1.20"), 10);
-        Producto producto5 = new Producto("Salmón congelado", new BigDecimal("6.80"), 10);
-
-*/
         int opcion;
 
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(
                     "Opción 1: ver los productos.\n" +
-                            "Opción 2: agregar un producto.\n" +
-                            "Opcion 3: crear un archivo.\n" +
-                            "Opción 4: salir."));
+                    "Opción 2: agregar un producto.\n" +
+                    "Opcion 3: crear un archivo.\n" +
+                    "Opción 4: salir."));
 
             switch (opcion) {
 
                 case 1 -> {
 
-                    try (BufferedReader br = new BufferedReader(new FileReader(JOptionPane.showInputDialog("¿Qué archivo quieres leer?")))) {
+                    try (BufferedReader br = new BufferedReader(
+                            new FileReader(JOptionPane.showInputDialog("¿Qué archivo quieres leer?")))) {
 
                         StringBuilder sb = new StringBuilder();
                         String linea;
@@ -121,7 +120,7 @@ public class Principal {
                 if (!textCompleto.toString().contains(producto.getNombre())) {
 
                     Files.write(Paths.get(fichero),
-                            (producto.verDetalle() + System.lineSeparator()).getBytes(),
+                            (producto + System.lineSeparator()).getBytes(),
                             StandardOpenOption.APPEND,
                             StandardOpenOption.CREATE);
 
